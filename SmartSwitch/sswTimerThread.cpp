@@ -89,7 +89,8 @@ void TimerThread::executeOnTimer(int aTimeCount)
       mSwitchLogic.checkAmpFail(); // new latch function to catch failed amps
       mSwitchLogic.doEvaluateRules();
       mSwitchLogic.doEvaluateSwitch();
-      mSwitchLogic.show();
+      char tBuffer[200];
+      Prn::print(Prn::View11, "%s", mSwitchLogic.asShowString(tBuffer));
    }
 }
 

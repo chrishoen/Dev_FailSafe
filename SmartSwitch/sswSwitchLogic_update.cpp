@@ -92,12 +92,11 @@ void SwitchLogic::doUpdateB(float aValue)
 //******************************************************************************
 //******************************************************************************
 //******************************************************************************
-// Show.
+// Return a string that can be used for a show.
 
-void SwitchLogic::show()
+char* SwitchLogic::asShowString(char* aBuffer)
 {
-   char tString[200];
-   sprintf(tString, "%4d    R %1d   F %1d %1d    V %6.4f %6.4f    FL %6.4f %6.4f     CS %2d %2d     P  %1d " ,
+   sprintf(aBuffer, "%4d    R %1d   F %1d %1d    V %6.4f %6.4f    FL %6.4f %6.4f     CS %2d %2d     P  %1d " ,
       mCount,
       mRequestedPath,
       mAmpFailedA,
@@ -112,27 +111,29 @@ void SwitchLogic::show()
 
    if (mAmpFailedA && mAmpFailedPrintCatchA == 0)
    {
-      strcat(tString, " AMP A FAILURE");
+      strcat(aBuffer, " AMP A FAILURE");
       mAmpFailedPrintCatchA++;
    }
 
    if (mAmpFailedB && mAmpFailedPrintCatchB == 0)
    {
-      strcat(tString, " AMP B FAILURE");
+      strcat(aBuffer, " AMP B FAILURE");
       mAmpFailedPrintCatchB++;
    }
 
    if (mClassChangeFlag)
    {
-      strcat(tString, " CLASS CHANGE");
+      strcat(aBuffer, " CLASS CHANGE");
    }
    
    if (mPathChangeFlag)
    {
-      strcat(tString, " PATH CHANGE");
+      strcat(aBuffer, " PATH CHANGE");
    }
-   Prn::print(Prn::View11, "%s", tString);
    mCount++;
+
+   // Done.
+   return aBuffer;
 }
 
 //******************************************************************************
