@@ -52,8 +52,8 @@ public:
    // Members.
 
    // Input values.
-   double mValueA;
-   double mValueB;
+   float mValueA;
+   float mValueB;
 
    // Slow classifiers.
    SlowClassifier mClassifierA;
@@ -115,8 +115,8 @@ public:
    void doRequestPathA();
    void doRequestPathB();
 
-   void doUpdateA(double aValue);
-   void doUpdateB(double aValue);
+   void doUpdateA(float aValue);
+   void doUpdateB(float aValue);
 
    //***************************************************************************
    //***************************************************************************

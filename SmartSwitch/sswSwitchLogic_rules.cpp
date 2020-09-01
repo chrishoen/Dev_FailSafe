@@ -76,7 +76,7 @@ void SwitchLogic::doEvaluateRules()
    }
 
    // RULE 5.
-   // If the states are the same (including polarity) then set path to the requested path. At this level of logic, single or double failures have already returned.
+   // If the states are the same (including polarity) then set path to the requested path. At this level of logic, single or float failures have already returned.
    // This means that the classes at this level can only be -1,0, or +1 (because -2 and +2 cases are caught above)
    if (mClassA == mClassB)
    {

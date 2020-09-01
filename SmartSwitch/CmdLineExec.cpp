@@ -6,7 +6,7 @@
 #include "risThreadsThreads.h"
 #include "risTimeMarker.h"
 
-#include "sswSwitchParms.h"
+#include "sswSwitchParmsFile.h"
 
 #include "sswTimerThread.h"
 using namespace SSW;
@@ -50,14 +50,14 @@ void CmdLineExec::execute(Ris::CmdLineCmd* aCmd)
 
 void CmdLineExec::executeValueA(Ris::CmdLineCmd* aCmd)
 {
-   gTimerThread->mValueA = aCmd->argDouble(1);
-   gTimerThread->mDeltaA = aCmd->argDouble(2);
+   gTimerThread->mValueA = aCmd->argFloat(1);
+   gTimerThread->mDeltaA = aCmd->argFloat(2);
 }
 
 void CmdLineExec::executeValueB(Ris::CmdLineCmd* aCmd)
 {
-   gTimerThread->mValueB = aCmd->argDouble(1);
-   gTimerThread->mDeltaB = aCmd->argDouble(2);
+   gTimerThread->mValueB = aCmd->argFloat(1);
+   gTimerThread->mDeltaB = aCmd->argFloat(2);
 }
 
 //******************************************************************************
@@ -66,12 +66,12 @@ void CmdLineExec::executeValueB(Ris::CmdLineCmd* aCmd)
 
 void CmdLineExec::executeDeltaA(Ris::CmdLineCmd* aCmd)
 {
-   gTimerThread->mDeltaA = aCmd->argDouble(1);
+   gTimerThread->mDeltaA = aCmd->argFloat(1);
 }
 
 void CmdLineExec::executeDeltaB(Ris::CmdLineCmd* aCmd)
 {
-   gTimerThread->mDeltaB = aCmd->argDouble(1);
+   gTimerThread->mDeltaB = aCmd->argFloat(1);
 }
 
 //******************************************************************************
@@ -80,7 +80,7 @@ void CmdLineExec::executeDeltaB(Ris::CmdLineCmd* aCmd)
 
 void CmdLineExec::executeNoise(Ris::CmdLineCmd* aCmd)
 {
-   gTimerThread->mNoiseSigma = aCmd->argDouble(1);
+   gTimerThread->mNoiseSigma = aCmd->argFloat(1);
    gTimerThread->mNoiseRequestFlag = true;
 }
 
@@ -129,7 +129,7 @@ void CmdLineExec::executeReqB(Ris::CmdLineCmd* aCmd)
 
 void CmdLineExec::executeParms(Ris::CmdLineCmd* aCmd)
 {
-   SSW::gSwitchParms.reset();
-   SSW::gSwitchParms.readSection("default");
-   SSW::gSwitchParms.show();
+   SSW::gSwitchParmsFile.reset();
+   SSW::gSwitchParmsFile.readSection("default");
+   SSW::gSwitchParmsFile.show();
 }

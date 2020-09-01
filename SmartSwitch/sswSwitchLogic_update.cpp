@@ -73,7 +73,7 @@ void SwitchLogic::doRequestPathB()
 //******************************************************************************
 //******************************************************************************
 
-void SwitchLogic::doUpdateA(double aValue)
+void SwitchLogic::doUpdateA(float aValue)
 {
    mValueA = aValue;
    mClassifierA.doClassify(mValueA, mClassA, mClassChangeFlagA);
@@ -81,7 +81,7 @@ void SwitchLogic::doUpdateA(double aValue)
    mClassChangeFlag = mClassChangeFlagA || mClassChangeFlagB;
 }
 
-void SwitchLogic::doUpdateB(double aValue)
+void SwitchLogic::doUpdateB(float aValue)
 {
    mValueB = aValue;
    mClassifierB.doClassify(mValueB, mClassB, mClassChangeFlagB);

@@ -7,6 +7,7 @@ Description:
 //******************************************************************************
 #include "stdafx.h"
 
+#include "sswSwitchParmsFile.h"
 #include "sswSwitchParms.h"
 
 #define  _AUTOTIMERTHREAD_CPP_
@@ -24,18 +25,18 @@ TimerThread::TimerThread()
 {
    // Set base class variables.
    BaseClass::setThreadName("Timer");
-   BaseClass::setThreadPrintLevel(TS::PrintLevel(0, 3));
+   BaseClass::setThreadPrintLevel(0);
 
    // Set base class variables.
    BaseClass::setThreadPriority(Ris::Threads::gPriorities.mTimerTest);
 
    // Set timer period.
-   BaseClass::mTimerPeriod = SSW::gSwitchParms.mTimerPeriod;
+   BaseClass::mTimerPeriod = SSW::gSwitchParmsFile.mTimerPeriod;
 
    // Initialize variables.
    mSuspendFlag = false;
-   mValueA = SSW::gSwitchParms.mInitialValueA;
-   mValueB = SSW::gSwitchParms.mInitialValueB;
+   mValueA = SSW::gSwitchParmsFile.mInitialValueA;
+   mValueB = SSW::gSwitchParmsFile.mInitialValueB;
    mValueAPN = mValueA;
    mValueBPN = mValueB;
    mDeltaA = 0.0;
@@ -70,13 +71,14 @@ void TimerThread::executeOnTimer(int aTimeCount)
    doUpdateValue();
 
    // Test something.
-   if (gSwitchParms.mTestMode == 1)
+   if (gSwitchParmsFile.mTestMode == 1)
    {
       // Update the classifier.
       int  tClass = -99;
       bool tChangeFlag = false;
       mClassifier.doClassify(mValueAPN, tClass, tChangeFlag);
-      mClassifier.show();
+      char tBuffer[200];
+      Prn::print(Prn::View11, "%s", mClassifier.asShowString(tBuffer));
    }
    else // if testMode != 1
    {
@@ -113,9 +115,9 @@ void TimerThread::doUpdateValue()
    mValueB += mDeltaB;
 
    // Add some noise.
-   mNoise = mGaussNoise.getNoise();
+   mNoise = (float)mGaussNoise.getNoise();
    mValueAPN = mValueA + mNoise;
-   mNoise = mGaussNoise.getNoise();
+   mNoise = (float)mGaussNoise.getNoise();
    mValueBPN = mValueB + mNoise;
 }
 //******************************************************************************

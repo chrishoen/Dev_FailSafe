@@ -32,19 +32,19 @@ public:
    bool mSuspendFlag;
 
    // Input value.
-   double mValueA;
-   double mValueB;
-   double mDeltaA;
-   double mDeltaB;
-   double mValueAPN;
-   double mValueBPN;
+   float mValueA;
+   float mValueB;
+   float mDeltaA;
+   float mDeltaB;
+   float mValueAPN;
+   float mValueBPN;
 
    int mRequestedPath;
 
    // Noise request and sigma. These are set by the user.
    bool   mNoiseRequestFlag;
-   double mNoiseSigma;
-   double mNoise;
+   float mNoiseSigma;
+   float mNoise;
 
    // Gaussian noise generator.
    Dsp::HistoryGaussNoise mGaussNoise;
