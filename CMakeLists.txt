@@ -9,7 +9,7 @@ include(MyLocalImports.cmake)
 project ("Dev_FailSafe")
 my_init_global_import_variables()
 
-add_subdirectory ("Test")
+add_subdirectory ("FailSafe")
 return()
 
 add_subdirectory ("FailSafe")
