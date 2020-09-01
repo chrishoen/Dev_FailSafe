@@ -6,13 +6,13 @@ include(MyCodeMacros.cmake)
 include(MyGlobalImports.cmake)
 include(MyLocalImports.cmake)
 
-project ("Dev_FailSafe")
+project ("Dev_SmartSwitch")
 my_init_global_import_variables()
 
-add_subdirectory ("FailSafe")
+add_subdirectory ("SmartSwitch")
 return()
 
-add_subdirectory ("FailSafe")
+add_subdirectory ("SmartSwitch")
 add_subdirectory ("Test")
 return()
 

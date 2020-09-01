@@ -4,7 +4,7 @@
 
 #include "risBaseDir.h"
 #include "risPortableCalls.h"
-#include "autoAutoParms.h"
+#include "sswSwitchParmsFile.h"
 
 //******************************************************************************
 //******************************************************************************
@@ -13,19 +13,19 @@
 
 void main_initialize(int argc,char** argv)
 {
-   printf("AutoSim Program********************************************BEGIN\n");
-   printf("AutoSim Program********************************************BEGIN\n");
-   printf("AutoSim Program********************************************BEGIN\n\n");
+   printf("SmartSwitch Program********************************************BEGIN\n");
+   printf("SmartSwitch Program********************************************BEGIN\n");
+   printf("SmartSwitch Program********************************************BEGIN\n\n");
 
    //***************************************************************************
    //***************************************************************************
    //***************************************************************************
    // Set program directory.
 
-   // Set the base directory global variable to the cproc directory path.
+   // Set the base directory global variable to the directory path.
    if (Ris::portableIsWindows())
    {
-      Ris::setBaseDirectory("c:/aaa_cproc");
+      Ris::setBaseDirectory("c:/aaa_prime/SmartSwitch");
    }
    else
    {
@@ -49,9 +49,8 @@ void main_initialize(int argc,char** argv)
    // Initialize thread services.
 
    TS::reset();
-   TS::setProgramName("Thresholder");
-   TS::setProgramLogFilepath("log/ThresholderLog.txt");
-   TS::setProgramPrintLevel(TS::PrintLevel(0, 3));
+   TS::setProgramName("SmartSwitch");
+   TS::setProgramPrintLevel(0);
    TS::initialize();
 
    //***************************************************************************
@@ -82,15 +81,15 @@ void main_initialize(int argc,char** argv)
    //***************************************************************************
 
    // Read parameters files.
-   Auto::gAutoParms.reset();
-   Auto::gAutoParms.readSection("default");
+   SSW::gSwitchParmsFile.reset();
+   SSW::gSwitchParmsFile.readSection("default");
 
    //***************************************************************************
    //***************************************************************************
    //***************************************************************************
    // Initialize program resources.
 
-   Prn::print(Prn::View11,"AutoSim Program********************************************BEGIN");
+   Prn::print(Prn::View11,"SmartSwitch Program********************************************BEGIN");
 }
 
 //******************************************************************************
@@ -111,7 +110,7 @@ void main_finalize()
 
    // Done.
    printf("\n");
-   printf("AutoSim Program********************************************END\n\n");
+   printf("SmartSwitch Program********************************************END\n\n");
 }
 
 //******************************************************************************

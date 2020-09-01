@@ -1,7 +1,7 @@
 ﻿{
   "configurations": [
    {
-      "name": "Dev_FailSafe",
+      "name": "Dev_SmartSwitch",
       "generator": "Ninja",
       "configurationType": "Release",
       "inheritEnvironments": [
