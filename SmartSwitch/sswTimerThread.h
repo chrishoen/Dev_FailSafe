@@ -7,6 +7,7 @@ Timer test thread.
 //******************************************************************************
 //******************************************************************************
 //******************************************************************************
+
 #include "risThreadsTimerThread.h"
 #include "dspHistoryGaussNoise.h"
 #include "sswSlowClassifier.h"
@@ -83,8 +84,8 @@ public:
 //******************************************************************************
 // Global instance
 
-#ifdef _AUTOTIMERTHREAD_CPP_
-          TimerThread* gTimerThread;
+#ifdef _SSWTIMERTHREAD_CPP_
+          TimerThread* gTimerThread = 0;
 #else
    extern TimerThread* gTimerThread;
 #endif

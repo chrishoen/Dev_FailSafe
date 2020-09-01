@@ -10,7 +10,7 @@ Description:
 #include "sswSwitchParmsFile.h"
 #include "sswSwitchParms.h"
 
-#define  _AUTOTIMERTHREAD_CPP_
+#define  _SSWTIMERTHREAD_CPP_
 #include "sswTimerThread.h"
 
 
