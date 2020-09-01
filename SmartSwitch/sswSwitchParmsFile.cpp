@@ -33,7 +33,7 @@ void SwitchParmsFile::reset()
    BaseClass::reset();
    if (Ris::portableIsWindows())
    {
-      BaseClass::setFilePath("C:/aaa_prime/Switch/Switch_Parms.txt");
+      BaseClass::setFilePath("C:/aaa_prime/SmartSwitch/Switch_Parms.txt");
    }
    else
    {
