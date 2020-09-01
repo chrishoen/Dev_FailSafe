@@ -7,13 +7,13 @@ Description:
 //******************************************************************************
 #include "stdafx.h"
 
-#include "autoAutoParms.h"
+#include "sswSwitchParms.h"
 
 #define  _AUTOTIMERTHREAD_CPP_
-#include "autoTimerThread.h"
+#include "sswTimerThread.h"
 
 
-namespace Auto
+namespace SSW
 {
 
 //******************************************************************************
@@ -30,12 +30,12 @@ TimerThread::TimerThread()
    BaseClass::setThreadPriority(Ris::Threads::gPriorities.mTimerTest);
 
    // Set timer period.
-   BaseClass::mTimerPeriod = Auto::gAutoParms.mTimerPeriod;
+   BaseClass::mTimerPeriod = SSW::gSwitchParms.mTimerPeriod;
 
    // Initialize variables.
    mSuspendFlag = false;
-   mValueA = Auto::gAutoParms.mInitialValueA;
-   mValueB = Auto::gAutoParms.mInitialValueB;
+   mValueA = SSW::gSwitchParms.mInitialValueA;
+   mValueB = SSW::gSwitchParms.mInitialValueB;
    mValueAPN = mValueA;
    mValueBPN = mValueB;
    mDeltaA = 0.0;
@@ -70,7 +70,7 @@ void TimerThread::executeOnTimer(int aTimeCount)
    doUpdateValue();
 
    // Test something.
-   if (gAutoParms.mTestMode == 1)
+   if (gSwitchParms.mTestMode == 1)
    {
       // Update the classifier.
       int  tClass = -99;

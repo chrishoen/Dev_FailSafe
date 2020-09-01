@@ -9,10 +9,10 @@ Timer test thread.
 //******************************************************************************
 #include "risThreadsTimerThread.h"
 #include "dspHistoryGaussNoise.h"
-#include "autoSlowClassifier.h"
-#include "autoSwitchLogic.h"
+#include "sswSlowClassifier.h"
+#include "sswSwitchLogic.h"
 
-namespace Auto
+namespace SSW
 {
 //******************************************************************************
 //******************************************************************************
@@ -54,8 +54,8 @@ public:
    //******************************************************************************
    // Members.
 
-   Auto::SlowClassifier  mClassifier;
-   Auto::SwitchLogic     mSwitchLogic;
+   SSW::SlowClassifier  mClassifier;
+   SSW::SwitchLogic     mSwitchLogic;
 
    //******************************************************************************
    //******************************************************************************

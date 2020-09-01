@@ -8,9 +8,9 @@ Slow classifier example class
 //******************************************************************************
 //******************************************************************************
 
-#include "autoSlowClassifier.h"
+#include "sswSlowClassifier.h"
 
-namespace Auto
+namespace SSW
 {
 
 //******************************************************************************
@@ -77,12 +77,10 @@ public:
    bool mAmpFailedPrintCatchA = 0;
    bool mAmpFailedPrintCatchB = 0;
 
-
-
    // Fuzzy boolean variable. this is the AND of the fuzzy confidence
    // vararables for all of the thresholders.
    // the measurements.
-   Dsp::FuzzyBool mFuzzyConfidence;
+   Dsp::FuzzyBoolFloat mFuzzyConfidence;
 
    // True if first update after initialization.
    bool mFirstFlag;

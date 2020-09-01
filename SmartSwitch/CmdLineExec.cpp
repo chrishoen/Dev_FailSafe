@@ -6,10 +6,10 @@
 #include "risThreadsThreads.h"
 #include "risTimeMarker.h"
 
-#include "autoAutoParms.h"
+#include "sswSwitchParms.h"
 
-#include "autoTimerThread.h"
-using namespace Auto;
+#include "sswTimerThread.h"
+using namespace SSW;
 
 //******************************************************************************
 //******************************************************************************
@@ -129,7 +129,7 @@ void CmdLineExec::executeReqB(Ris::CmdLineCmd* aCmd)
 
 void CmdLineExec::executeParms(Ris::CmdLineCmd* aCmd)
 {
-   Auto::gAutoParms.reset();
-   Auto::gAutoParms.readSection("default");
-   Auto::gAutoParms.show();
+   SSW::gSwitchParms.reset();
+   SSW::gSwitchParms.readSection("default");
+   SSW::gSwitchParms.show();
 }

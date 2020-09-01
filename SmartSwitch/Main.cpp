@@ -6,7 +6,7 @@
 #include "risCmdLineConsole.h"
 #include "CmdLineExec.h"
 
-#include "autoTimerThread.h"
+#include "sswTimerThread.h"
 
 //******************************************************************************
 //******************************************************************************
@@ -28,8 +28,8 @@ int main(int argc,char** argv)
 
    if (true)
    {
-      Auto::gTimerThread = new Auto::TimerThread;
-      Auto::gTimerThread->launchThread();
+      SSW::gTimerThread = new SSW::TimerThread;
+      SSW::gTimerThread->launchThread();
    }
 
    //***************************************************************************
@@ -38,7 +38,7 @@ int main(int argc,char** argv)
    // Show program threads.
 
    Ris::Threads::showCurrentThreadInfo();
-   if (Auto::gTimerThread)   Auto::gTimerThread->showThreadInfo();
+   if (SSW::gTimerThread)   SSW::gTimerThread->showThreadInfo();
 
    //***************************************************************************
    //***************************************************************************
@@ -54,17 +54,17 @@ int main(int argc,char** argv)
    //***************************************************************************
    // Shutdown program threads.
 
-   if (Auto::gTimerThread)   Auto::gTimerThread->shutdownThread();
+   if (SSW::gTimerThread)   SSW::gTimerThread->shutdownThread();
 
    //***************************************************************************
    //***************************************************************************
    //***************************************************************************
    // Delete program threads.
 
-   if (Auto::gTimerThread)
+   if (SSW::gTimerThread)
    {
-      delete Auto::gTimerThread;
-      Auto::gTimerThread = 0;
+      delete SSW::gTimerThread;
+      SSW::gTimerThread = 0;
    }
 
    //***************************************************************************

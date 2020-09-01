@@ -8,10 +8,10 @@ Description:
 
 #include "stdafx.h"
 
-#include "autoAutoParms.h"
-#include "autoSwitchLogic.h"
+#include "sswSwitchParms.h"
+#include "sswSwitchLogic.h"
 
-namespace Auto
+namespace SSW
 {
 
 
