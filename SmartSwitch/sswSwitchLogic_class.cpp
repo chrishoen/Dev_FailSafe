@@ -75,7 +75,7 @@ void SwitchLogic::doRequestPathB()
 
 char* SwitchLogic::asShowString(char* aBuffer)
 {
-   sprintf(aBuffer, "%4d    R %1d   F %1d %1d    V %6.4f %6.4f    FL %6.4f %6.4f     CS %2d %2d     P  %1d " ,
+   sprintf(aBuffer, "%4d    R %1d   F %1d %1d    V %6.4f %6.4f    FC %6.4f %6.4f     CS %2d %2d     P  %1d " ,
       mCount,
       mRequestedPath,
       mAmpFailedA,

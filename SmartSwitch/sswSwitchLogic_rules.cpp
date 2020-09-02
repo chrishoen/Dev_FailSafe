@@ -64,7 +64,7 @@ void SwitchLogic::doEvaluateRules()
    if (mAmpFailedA)
    {
       mNextPath = cPath_B;
-         return;
+      return;
    }
 
    // RULE 4

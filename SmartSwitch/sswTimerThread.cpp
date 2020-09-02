@@ -86,7 +86,7 @@ void TimerThread::executeOnTimer(int aTimeCount)
       else mSwitchLogic.doRequestPathB();
       mSwitchLogic.doUpdateA(mValueAPN);
       mSwitchLogic.doUpdateB(mValueBPN);
-      mSwitchLogic.checkAmpFail(); // new latch function to catch failed amps
+//    mSwitchLogic.checkAmpFail(); // new latch function to catch failed amps
       mSwitchLogic.doEvaluateRules();
       mSwitchLogic.doEvaluateSwitch();
       char tBuffer[200];

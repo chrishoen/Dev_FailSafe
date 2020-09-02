@@ -61,6 +61,7 @@ void main_initialize(int argc,char** argv)
    // Initialize print.
    Prn::resetPrint();
    Prn::useConsole(1);
+   Prn::useConsole(2);
    Prn::initializePrint();
 
    // Initialize print filters.
@@ -68,6 +69,11 @@ void main_initialize(int argc,char** argv)
    Prn::setFilter(Prn::View12, false, 1);
    Prn::setFilter(Prn::View13, false, 1);
    Prn::setFilter(Prn::View14, false, 1);
+
+   Prn::setFilter(Prn::View21, true,  2);
+   Prn::setFilter(Prn::View22, false, 2);
+   Prn::setFilter(Prn::View23, false, 2);
+   Prn::setFilter(Prn::View24, false, 2);
 
    Prn::setFilter(Prn::Show1, true);
    Prn::setFilter(Prn::Show2, true);

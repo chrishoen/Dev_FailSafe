@@ -93,8 +93,8 @@ public:
    // from its previous value.
    void doClassify(
       float aValue,           // Input
-      int&   aClass,           // Output
-      bool&  aChangeFlag);     // Output
+      int&  aClass,           // Output
+      bool& aChangeFlag);     // Output
 
    //***************************************************************************
    //***************************************************************************

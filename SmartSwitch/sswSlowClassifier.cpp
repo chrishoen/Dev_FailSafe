@@ -73,7 +73,7 @@ void SlowClassifier::initialize()
 // from its previous value.
 
 void SlowClassifier::doClassify(
-   float aValue,          // Input
+   float  aValue,          // Input
    int&   aClass,          // Output
    bool&  aChangeFlag)     // Output
 {
@@ -83,6 +83,7 @@ void SlowClassifier::doClassify(
    // Do this first.
 
    mValue = aValue;
+   mLastClass = mClass;
 
    //***************************************************************************
    //***************************************************************************
@@ -139,8 +140,13 @@ void SlowClassifier::doClassify(
    //***************************************************************************
    //***************************************************************************
    //***************************************************************************
-   // Write to the putput variables.
+   // Write to output variables.
+
    mCount++;
+   mChangeFlag = mClass != mLastClass;
+
+   aClass = mClass;
+   aChangeFlag = mChangeFlag;
 }
 
 //******************************************************************************
